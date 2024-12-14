@@ -1,0 +1,48 @@
+<section class="wraper flex flex-column justify-content-center">
+  <h1>Sign up</h1>
+
+  <form [formGroup]="registerForm" class="card flex flex-column justify-content-center gap-5" (ngSubmit)="buttomclicked()" >
+    <p-floatLabel >
+        <input class="w-full" pInputText id="User Name" type="text" formControlName="username"/>
+        <label for="User Name">User Name</label>
+    </p-floatLabel>
+    <p-floatLabel >
+        <input class="w-full" pInputText id="First Name" type="text" formControlName="firstName"/>
+        <label for="First Name">First Name</label>
+    </p-floatLabel>
+    <p-floatLabel >
+        <input class="w-full" pInputText id="Last Name" type="text" formControlName="lastName"/>
+        <label for="Last Name">Last Name</label>
+    </p-floatLabel>
+    <p-floatLabel >
+        <input class="w-full" pInputText id="Email" type="email" formControlName="email"/>
+        <label for="Email">Email</label>
+    </p-floatLabel>
+    <p-floatLabel >
+        <input class="w-full" pInputText id="Password" type="password" formControlName="password" />
+        <label for="Password">Password</label>
+    </p-floatLabel>
+    <p-floatLabel >
+        <input class="w-full" pInputText id="Confirm Password" type="password" formControlName="rePassword" />
+        <label for="Confirm Password">Confirm Password</label>
+    </p-floatLabel>
+    <p-floatLabel >
+        <input class="w-full" pInputText id="phone" type="tel" formControlName="phone" />
+        <label for="phone">phone</label>
+    </p-floatLabel>
+    <p class="flex justify-content-center" >Already have an account ?  <span class="cursor-pointer" routerLink="/auth/login"> Login </span></p>
+    </form>
+    @if(messages){
+        <div class="card">
+            <p-messages severity="error">
+                <ng-template pTemplate>
+                    <div class="ml-2">{{messages}}</div>
+                </ng-template>
+            </p-messages>
+
+        </div>
+    }
+
+    <app-buttom (clickEmiter)="buttomclicked()" type="submit"  [customStyles]="styles"     class="md:w-25rem"  [text]="'Create Account'"></app-buttom>
+</section>
+

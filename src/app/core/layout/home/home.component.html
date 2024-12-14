@@ -1,0 +1,33 @@
+<div class="flex md:flex-row flex-row p-0 m-0  ">
+  <div class="col-12 md:col-6 h-screen custom-borders-radius box-shadowing hidden md:flex md:pl-8">
+    <div class="mt-8 p-0 col-7">
+      <div class="font-bold custome-text">
+        Welcome to <span class="font-bold block">Elevate</span>
+      </div>
+      <p class="mb-8">
+        Quidem autem voluptatibus qui quaerat aspernatur architecto natus
+      </p>
+      <img class="" src="assets/img/bro.png" alt="studient" />
+    </div>
+  </div>
+  <div class="col-12 md:col-6 md:pr-8">
+    <div class="my-3 md:my-8 w-full  flex flex-row justify-content-center md:justify-content-end">
+      <a href="" class="text-xs  md:text-xl border-0">English</a>
+      <a
+        class="min-w-max font-bold text-xs  md:text-xl line-height-3"
+        style="color: var(--menu-text-color)"
+        routerLink="login"
+        >Sign in</a
+      >
+      <a
+        class="font-normal text-xs  md:text-xl line-height-3 cursor-pointer"
+        style="color: var(--menu-text-color)"
+        routerLink="register"
+        >Register</a
+      >
+    </div>
+    <div class="min-w-min flex flex-row justify-content-center">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>

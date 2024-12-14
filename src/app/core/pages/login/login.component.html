@@ -1,0 +1,52 @@
+<section class="wraper flex flex-column justify-content-center">
+  <h1>Log in</h1>
+
+  <form
+    [formGroup]="login"
+    class="card flex flex-column justify-content-center gap-5 mb-5"
+    (ngSubmit)="buttomclicked()"
+  >
+    <p-floatLabel>
+      <input
+        class="w-full"
+        pInputText
+        id="Email"
+        type="email"
+        formControlName="email"
+      />
+      <label for="Email">Email</label>
+    </p-floatLabel>
+    <p-floatLabel>
+      <input
+        class="w-full"
+        pInputText
+        id="Password"
+        type="password"
+        formControlName="password"
+      />
+      <label for="Password">Password</label>
+    </p-floatLabel>
+
+    @if(messages){
+    <div class="card">
+      <p-messages severity="error">
+        <ng-template pTemplate>
+          <div class="ml-2">{{ messages }}</div>
+        </ng-template>
+      </p-messages>
+    </div>
+    }
+    <span
+      class="flex flex-row-reverse cursor-pointer"
+      routerLink="/auth/forgetpassword"
+      >Recover Password ?</span
+    >
+  </form>
+
+  <app-buttom
+    (clickEmiter)="buttomclicked()"
+    [customStyles]="styles"
+    class="md:w-25rem"
+    [text]="'Log in'"
+  ></app-buttom>
+</section>

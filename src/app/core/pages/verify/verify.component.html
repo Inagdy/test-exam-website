@@ -1,0 +1,41 @@
+<section class="wraper flex flex-column justify-content-center">
+  <h1>Verify code</h1>
+
+  <form
+    [formGroup]="verifyFrom"
+    class="card flex flex-column justify-content-center gap-5"
+    (ngSubmit)="buttomclicked()"
+  >
+    <p-floatLabel>
+      <input
+        class="w-full"
+        pInputText
+        id="resetCode"
+        type="text"
+        formControlName="resetCode"
+      />
+      <label for="resetCode">Enter Code</label>
+    </p-floatLabel>
+
+    <p class="flex justify-content-end">
+      Didn't receive a code ? <span class="cursor-pointer"> Resend</span>
+    </p>
+    @if(messages){
+      <div class="card">
+          <p-messages severity="error">
+              <ng-template pTemplate>
+                  <div class="ml-2">{{messages}}</div>
+              </ng-template>
+          </p-messages>
+      </div>
+  }
+  </form>
+
+  <app-buttom
+    (clickEmiter)="buttomclicked()"
+    type="submit"
+    [customStyles]="styles"
+    class="md:w-25rem"
+    [text]="'Verify'"
+  ></app-buttom>
+</section>

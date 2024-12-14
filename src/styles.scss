@@ -1,0 +1,27 @@
+/* You can add global styles to this file, and also import other style files */
+@import 'primeflex/primeflex.scss';
+@import "primeng/resources/themes/lara-light-blue/theme.css";
+@import "primeng/resources/primeng.css";
+
+// @font-face {
+//   font-family: MyCustomFont;
+//   src: url('assets/font/Poppins-SemiBold.ttf') format('.ttf');
+//   font-weight: normal;
+//   font-style: normal;
+// }
+
+
+:root{
+  --main-color:rgba(68, 97, 242, 1);
+  --menu-text-color:rgba(68, 97, 242, 1);
+  --border-radious-100:6.25rem;
+}
+body{
+  font-family: "Poppins", serif;
+  margin: 0px;
+  padding: 0px;
+}
+span{
+  color: var( --menu-text-color);
+}
+

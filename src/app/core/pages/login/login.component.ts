@@ -24,6 +24,7 @@ export class LoginComponent {
   private _authApiService = inject(AuthApiServices);
   private _router = inject(Router);
   messages: string = '';
+ 
 
   styles = {
     'background-color': 'var(--main-color )',
@@ -51,6 +52,7 @@ export class LoginComponent {
       next: (res) => {
         this.messages = '';
         this._router.navigate(['./home']);
+        localStorage.setItem('userinfo', JSON.stringify(res));
       },
       error: (err) => {
         this.messages = err.error.message;

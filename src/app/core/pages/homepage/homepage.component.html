@@ -1,6 +1,6 @@
 <div class="menu flex flex-row align-item-center justify-content-between md:hidden">
     <div class="relative postion-left flex flex-row justify-content-between align-items-center">
-        <a class="cursor-pointer" href=""><i class="fa-solid fa-bars fa-lg" style="color: #f7f7f7;"></i></a>
+        <a class="cursor-pointer" (click)="menuClick()"><i class="fa-solid fa-bars fa-lg" style="color: #f7f7f7;"></i></a>
         <a class="cursor-pointer" href=""><i class="fa-solid fa-magnifying-glass fa-lg" style="color: #ffffff;"></i>
         </a>
     </div>
@@ -8,6 +8,16 @@
         <img class="img-size border-circle" src="assets/pic/Frame 40.png" alt="">
     </div>
 </div>
+@if (menuBar) { 
+    <div class="w-screen bg-white absolute gap-6 top-box">
+        <div class="flex flex-row justify-content-between align-content-center">
+            <img class="logo-sizing" src="assets/pic/Final Logo 1.png" alt=""> 
+            <a>
+                <i class="fa-solid fa-x cursor-pointer" (click)="menuClick()" style="color: #000000;"></i>
+            </a>
+        </div>   
+    </div>
+}
 <div class="px-3 mt-4 md:hidden" >
     <img class="w-full " src="assets/pic/Frame 40.png" alt="">
 </div>

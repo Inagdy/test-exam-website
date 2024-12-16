@@ -12,7 +12,12 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
   styleUrl: './homepage.component.scss'
 })
 export class HomepageComponent  {
- 
+  menuBar:boolean=false;
+
+  menuClick(){
+    this.menuBar = !this.menuBar;
+  }
+
 
 }
 

@@ -10,7 +10,7 @@ import { FormsModule } from '@angular/forms';
 @Component({
   selector: 'app-homepage',
   standalone: true,
-  imports: [FontAwesomeModule, ButtonModule, ButtomComponent,FormsModule, InputTextModule ],
+  imports: [FontAwesomeModule,ButtonModule, ButtomComponent, InputTextModule, FormsModule],
   templateUrl: './homepage.component.html',
   styleUrl: './homepage.component.scss'
 })

@@ -28,13 +28,15 @@
                 </div>
             </div>
         </div>
-        <div class="col-10 bg-red-500">
+        <div class="col-10  ">
             <div class="grid">
-                <div class="col-9 bg-green-500">
+                <div class="col-9 justify-content-center align-content-center align-items-center">
                     <div class="card flex flex-wrap justify-center items-end gap-4">
-                        <div class="card flex flex-col items-center gap-4 justify-content-center align-content-center">
-
-                            <input pInputText class="w-full"  type="text" pSize="large" placeholder="Search Quiz" />
+                        <div class="card flex flex-col items-center gap-4 w-full">
+                            <div class="p-input-icon-left w-full flex flex-row align-content-center ">
+                                <i class="pi pi-search"></i>
+                                <input pInputText class="w-full h-4rem shadow" type="text" placeholder="Search Quiz" />
+                              </div>
                         </div>
                     </div>
                 </div>
@@ -46,10 +48,11 @@
                     [text]="'Start Quiz'"
                   ></app-buttom>
                 </div>
-                <div class="col-1 bg-blue-400 relative">
+                <div class="col-1 flex flex-row justify-content-end">
                     <img class="img-size2 border-circle flex justify-content-center align-content-center"  src="assets/pic/Frame 40.png" alt="person">
                 </div>
-                <div class="col-12 bg-yellow-400"></div>
+                <div class="col-12"><app-user-info></app-user-info></div>
+                <div class="col-12 bg-red-200"></div>
             </div>
         </div>
 
@@ -57,12 +60,12 @@
 </div>
 
 @if (menuBar) { 
-<div class="nav w-screen bg-white absolute  top-box">
+<div class="nav w-screen bg-white absolute  top-box md:hidden">
        <div class="layout  flex flex-row justify-content-between">
           <div class="wrapper  w-6 flex flex-column gap-4">
             <img class="logo-sizing" src="assets/pic/Final Logo 1.png" alt="logo"> 
             <button class="flex justify-content-between  align-items-center border-none p-2 text-white border-round-xl font-semibold text-base" style="background-color: var(--main-color);">
-                <img class="" src="assets/pic/dashborad.png" alt="">
+                <img class="" src="assets/pic/dashbord.png" alt="">
                 Dashbord</button>
            <button class="flex justify-content-between  align-items-center border-none p-2  border-round-xl bg-white font-semibold text-base" style="color: #696F79;">
                     <img class="" src="assets/pic/timer.png" alt="Quiz History" >

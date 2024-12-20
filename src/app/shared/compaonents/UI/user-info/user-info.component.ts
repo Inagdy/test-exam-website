@@ -9,15 +9,16 @@ import { Component, inject, OnInit } from '@angular/core';
   styleUrl: './user-info.component.scss'
 })
 export class UserInfoComponent implements OnInit {
-  email:string=''
+  userString:{}= {}
+  fullName :string =''
   
   ngOnInit(): void {
-    // if(localStorage.getItem('userinfo')!== null){
+    if(localStorage.getItem('userinfo')!== null){
 
-    //   const userString = localStorage.getItem('userinfo');
-    //   const user = userString ? JSON.parse(userString) : null;
-    //   console.log(user)
-    // }
+      const userString = localStorage.getItem('userinfo');
+      const user = userString ? JSON.parse(userString) : null;
+      this.fullName=`${user.user.firstName} ${user.user.latName}` 
+    }
   }
 
 }

@@ -10,7 +10,7 @@ export interface LoginApiRes{
         _id:string,
         username:string,
         firstName:string,
-        latName:string,
+        lastName:string,
         email:string,
         phone: string,
         role:string,

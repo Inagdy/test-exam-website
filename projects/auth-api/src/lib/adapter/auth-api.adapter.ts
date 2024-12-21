@@ -15,7 +15,7 @@ export class AuthAPIAdapter implements Adapter{
         _id: data.user._id,
         username: data.user.username,
         firstName: data.user.firstName,
-        latName: data.user.lastName,
+        lastName: data.user.lastName,
         email: data.user.email,
         phone: data.user.phone,
         role: data.user.role,

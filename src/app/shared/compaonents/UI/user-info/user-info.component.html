@@ -1,8 +1,142 @@
- <div class="w-full  user-card flex flex-row justify-content-center align-items-center shadow" style="background-color: rgba(255, 255, 255, 1);">
-    <div class="col-2 w-auto" >
-       <img class="user-card-image" src="assets/pic/Frame 40.png" alt="person">
+<!-- <div
+  class="w-full md:user-card flex flex-column md:flex-row justify-content-center align-items-center shadow "
+  style="
+    background-color: rgba(255, 255, 255, 1);
+    width: 66.438rem;
+    height: 17.5rem;
+  "
+>
+  <div class="w-full md:col-3 md:w-auto">
+    <img class="user-card-image" src="assets/pic/Frame 40.png" alt="person" />
+  </div>
+  <div
+    class="col-9 flex flex-column justify-content-center  relative"
+    style="left: 3.5rem"
+  >
+    <h1
+      class="font-bold text-4xl p-0 m-0"
+      style="color: var(--menu-text-color); line-height: 3rem"
+    >
+      {{ this.userData.user.firstName }} {{ this.userData.user.lastName }}
+    </h1>
+    <p class="font-normal text-xl p-0 m-0" style="color: #979ca3">
+      Voluptatem aut
+    </p>
+    <div class="card mt-4">
+      <div class="card" style="width: 38.688rem">
+        <p-progressBar
+          showValue="false"
+          [value]="75"
+          [style]="{ width: '90%' }"
+        />
+      </div>
+      <div
+        class="flex flex-row mt-4 align-items-center"
+        style="color: var(--menu-text-color);height: 4.5rem; gap: 1.688rem;"
+      >
+        <div
+          class="flex flex-row gap-3 justify-content-start align-items-center"
+          style="width: 11.375rem; height: 4.5rem"
+        >
+          <i class="fa-solid fa-flag fa-2xl"></i>
+          <div
+            class="flex flex-column"
+            style="color: #696f79; "
+          >
+            <p class="font-bold" style="font-size: 1.813rem;">27</p>
+            <p>Quiz Passed</p>
+          </div>
+        </div>
+        <div
+          class="flex flex-row gap-3 justify-content-center align-items-center"
+          style="width: 11.375rem; height: 4.5rem"
+        >
+          <i class="fa-solid fa-clock fa-2xl"></i>
+          <div class="flex flex-column" style="color: #696f79">
+            <p class="font-bold" style="font-size: 1.813rem;">13 min</p>
+            <p>Fastest Time</p>
+          </div>
+        </div>
+        <div
+          class="flex flex-row gap-3 justify-content-center align-items-center"
+          style="width: 11.375rem; height: 4.5rem"
+        >
+          <i class="fa-solid fa-circle-check fa-2xl"></i>
+          <div class="flex flex-column" style="color: #696f79">
+            <p class="font-bold" style="font-size: 1.813rem;">200</p>
+            <p>Correct Answers</p>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="col-10 flex flex-row">
-     <h1 class="font-bold" style="color: var(--menu-text-color);">{{this.userData.user.firstName}} {{ this.userData.user.lastName}}</h1>
+  </div>
+</div> -->
+<div
+  class="mt-4 col mx-3 p-0 md:flex flex-row justify-content-start align-items-center md:border-round-3xl md:px-5 md:py-5  shadow"
+  style="background-color: rgba(255, 255, 255, 1)"
+>
+  <div class="w-full p-0 md:col-3 md:w-auto">
+    <img class="w-12" src="assets/pic/Frame 40.png" alt="person" />
+  </div>
+  <div
+  class="col md:col-9 flex flex-column md:justify-content-center align-content-start md:ml-7"
+
+  >
+  <h1 class="font-bold text-4xl p-0 m-0" style="color: var(--menu-text-color); line-height: 3rem">
+  {{ this.userData.user.firstName }} {{ this.userData.user.lastName }}
+</h1>
+<p class="font-normal text-xl p-0 m-0" style="color: #979ca3">
+  Voluptatem aut
+</p>
+<div class="card mt-4">
+  <div class="card" style="width: 38.688rem">
+    <p-progressBar
+      showValue="false"
+      [value]="75"
+      [style]="{ width: '90%' }"
+    />
+  </div>
+  <div
+    class="flex flex-row mt-4 align-items-center"
+    style="color: var(--menu-text-color);height: 4.5rem; gap: 1.688rem;"
+  >
+    <div
+      class="flex  flex-column md:flex-row gap-3 justify-content-start align-items-center"
+      style="width: 11.375rem; height: 4.5rem"
+    >
+      <i class="fa-solid fa-flag fa-2xl"></i>
+      <div
+        class="flex flex-column"
+        style="color: #696f79; "
+      >
+        <p class="font-bold" style="font-size: 1.813rem;">27</p>
+        <p>Quiz Passed</p>
+      </div>
     </div>
+    <div
+      class="flex flex-row gap-3 justify-content-center align-items-center"
+      style="width: 11.375rem; height: 4.5rem"
+    >
+      <i class="fa-solid fa-clock fa-2xl"></i>
+      <div class="flex flex-column" style="color: #696f79">
+        <p class="font-bold" style="font-size: 1.813rem;">13 min</p>
+        <p>Fastest Time</p>
+      </div>
+    </div>
+    <div
+      class="flex flex-row gap-3 justify-content-center align-items-center"
+      style="width: 11.375rem; height: 4.5rem"
+    >
+      <i class="fa-solid fa-circle-check fa-2xl"></i>
+      <div class="flex flex-column" style="color: #696f79">
+        <p class="font-bold" style="font-size: 1.813rem;">200</p>
+        <p>Correct Answers</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+</div>
+
 </div>

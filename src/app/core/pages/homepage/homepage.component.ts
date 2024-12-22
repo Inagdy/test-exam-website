@@ -7,6 +7,7 @@ import { InputTextModule } from 'primeng/inputtext';
 import { FormsModule } from '@angular/forms';
 import { RouterLink, RouterOutlet } from '@angular/router';
 import { UserInfoComponent } from "../../../shared/compaonents/UI/user-info/user-info.component";
+import { AllCategoryComponent } from "../../../shared/compaonents/UI/all-category/all-category.component";
 
 
 
@@ -14,7 +15,7 @@ import { UserInfoComponent } from "../../../shared/compaonents/UI/user-info/user
 @Component({
   selector: 'app-homepage',
   standalone: true,
-  imports: [FontAwesomeModule, ButtonModule, ButtomComponent, FormsModule, InputTextModule, InputTextModule, RouterLink, RouterOutlet, UserInfoComponent],
+  imports: [FontAwesomeModule, ButtonModule, ButtomComponent, FormsModule, InputTextModule, InputTextModule, RouterLink, RouterOutlet, UserInfoComponent, AllCategoryComponent],
   templateUrl: './homepage.component.html', 
   styleUrl: './homepage.component.scss'
 })

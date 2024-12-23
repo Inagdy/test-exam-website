@@ -1,5 +1,5 @@
 
-import { Component} from '@angular/core';
+import { Component, inject, OnInit} from '@angular/core';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ButtonModule } from 'primeng/button';
 import { ButtomComponent } from "../../../shared/compaonents/UI/buttom/buttom.component";
@@ -8,6 +8,7 @@ import { FormsModule } from '@angular/forms';
 import { RouterLink, RouterOutlet } from '@angular/router';
 import { UserInfoComponent } from "../../../shared/compaonents/UI/user-info/user-info.component";
 import { AllCategoryComponent } from "../../../shared/compaonents/UI/all-category/all-category.component";
+import { GetAllExamesService } from '../../services/get-all-exames.service';
 
 
 
@@ -19,12 +20,14 @@ import { AllCategoryComponent } from "../../../shared/compaonents/UI/all-categor
   templateUrl: './homepage.component.html', 
   styleUrl: './homepage.component.scss'
 })
-export class HomepageComponent  {
+export class HomepageComponent {
   menuBar:boolean=false;
+
 
   menuClick(){
     this.menuBar = !this.menuBar;
   }
+
   
   buttomclicked(){}
   styles = {

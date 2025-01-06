@@ -8,7 +8,6 @@ import { FormsModule } from '@angular/forms';
 import { RouterLink, RouterOutlet } from '@angular/router';
 import { UserInfoComponent } from "../../../shared/compaonents/UI/user-info/user-info.component";
 import { AllCategoryComponent } from "../../../shared/compaonents/UI/all-category/all-category.component";
-import { GetAllExamesService } from '../../services/get-all-exames.service';
 
 
 
@@ -20,8 +19,10 @@ import { GetAllExamesService } from '../../services/get-all-exames.service';
   templateUrl: './homepage.component.html', 
   styleUrl: './homepage.component.scss'
 })
-export class HomepageComponent {
+export class HomepageComponent  {
   menuBar:boolean=false;
+  
+
 
 
   menuClick(){

@@ -1,6 +1,12 @@
-import { Component, inject, OnInit } from '@angular/core';
-import { GetAllExamesService } from '../../../../core/services/get-all-exames.service';
-import { LoginApiRes } from '../../../../../../dist/auth-api/lib/interfaces/loginRes';
+import { ExamesArray } from './../../../../core/interfaces/exames-array';
+import {
+  Component,
+  Inject,
+  OnInit,
+  PLATFORM_ID,
+} from '@angular/core';
+import { AllserviceService } from '../../../../core/services/allservice.service';
+import { isPlatformBrowser } from '@angular/common';
 
 @Component({
   selector: 'app-all-category',
@@ -10,40 +16,26 @@ import { LoginApiRes } from '../../../../../../dist/auth-api/lib/interfaces/logi
   styleUrl: './all-category.component.scss',
 })
 export class AllCategoryComponent implements OnInit {
-  private readonly _GetAllExamesService = inject(GetAllExamesService);
-  storedData:LoginApiRes ={
-    message: '',
-    token: '',
-    user: {
-      _id: '',
-      username: '',
-      firstName: '',
-      lastName: '',
-      email: '',
-      phone: '',
-      role: '',
-      isVerified: false,
-      createdAt: '',
-    },
-  };
-
-    
+  examesdata!:ExamesArray[];
+  call: any;
+  constructor(
+    private _allserviceService: AllserviceService,
+    @Inject(PLATFORM_ID) private platform: object
+  ) {}
   ngOnInit(): void {
-    if (typeof localStorage !== 'undefined') {
-     const userInfo = localStorage.getItem('userinfo');
-     if (userInfo) {
-       this.storedData = JSON.parse(userInfo);
-     } else {
-       console.warn('No user info found in localStorage');
-     }
-      console.warn('localStorage is not available');
-    }
+    if (isPlatformBrowser(this.platform)) {
+     this.call = this._allserviceService.getTestData().subscribe({
+        next: (data) => {
+          this.examesdata = data.subjects;
 
-  
-   this._GetAllExamesService.getAllExames(this.storedData.token).subscribe(() => {
-     next: (res:any) => {
-       console.log(res);
-     };
-   });
+        },
+        error: (error) => {
+          console.log(error);
+        },
+      });
+    }
   }
+  // ngOnDestroy(): void {
+  //   this.call.unsubscribe();
+  // }
 }

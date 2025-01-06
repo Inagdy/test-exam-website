@@ -1,3 +1,4 @@
+import { AllserviceService } from './../../services/allservice.service';
 import { AuthApiServices } from 'auth-api';
 import { Component, inject } from '@angular/core';
 import {
@@ -12,7 +13,6 @@ import { InputTextModule } from 'primeng/inputtext';
 import { FloatLabelModule } from 'primeng/floatlabel';
 import { MessagesModule } from 'primeng/messages';
 import { Router, RouterLink } from '@angular/router';
-import { Console } from 'console';
 
 @Component({
   selector: 'app-login',
@@ -52,10 +52,12 @@ export class LoginComponent {
   buttomclicked() {
     this._authApiService.login(this.login.value).subscribe({
       next: (res) => {
-        console.log(res)
         this.messages = '';
+        localStorage.setItem('token', res.token);
+        localStorage.setItem('firstName', res.user.firstName);
+        localStorage.setItem('lastName',res.user.lastName);
         this._router.navigate(['./home']);
-        localStorage.setItem('userinfo', JSON.stringify(res));
+  
       },
       error: (err) => {
         this.messages = err.error.message;

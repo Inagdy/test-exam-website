@@ -1,16 +1,34 @@
 <section class="mt-4 mx-3 flex flex-column">
-    <div class="flex justify-content-between">
-        <h2 class="font-medium text-2xl line-height-2" style="color: var(--menu-text-color);">Quizes</h2>
-        <h2 class="font-medium text-2xl line-height-2" style="color: var(--menu-text-color);">View All</h2>
-    </div>
-    <div class="flex flex-column justify-content-center w-12  md:flex-row md:flex-wrap">
+  <div class="flex justify-content-between">
+    <h2
+      class="font-medium text-2xl line-height-2"
+      style="color: var(--menu-text-color)"
+    >
+      Quizes
+    </h2>
+    <h2
+      class="font-medium text-2xl line-height-2"
+      style="color: var(--menu-text-color)"
+    >
+      View All
+    </h2>
+  </div>
+  <div class="grid">
     @for (item of examesdata ; track $index) {
-            <div class="grid" >
-                <div class="col-1 md:col-3 md:gap-2 md:mx-3 md:w-20rem" >
-
-                    <img class="w-12" [src]="item.icon" [alt]="item.name">
-                </div>
-            </div>
-        }
+    <div class="md:col-fixed col-12 relative" style="width: 330.17; height: 292.65px; border-radius: 8.44px;">
+      <div
+        class="w-17rem h-4rem absolute"
+        style="
+         
+          bottom: 27.01px;
+          left: 27.01px;
+          background-color: rgba(25, 53, 202, 0.4);
+          border-radius: 8.44px;
+        "
+      >
+     <p>{{item.name}}</p></div>
+      <img class="w-12" [src]="item.icon" [alt]="item.name" />
     </div>
+    }
+  </div>
 </section>

@@ -2,11 +2,13 @@ import { ExamesArray } from './../../../../core/interfaces/exames-array';
 import {
   Component,
   Inject,
+  OnDestroy,
   OnInit,
   PLATFORM_ID,
 } from '@angular/core';
 import { AllserviceService } from '../../../../core/services/allservice.service';
 import { isPlatformBrowser } from '@angular/common';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-all-category',
@@ -17,7 +19,8 @@ import { isPlatformBrowser } from '@angular/common';
 })
 export class AllCategoryComponent implements OnInit {
   examesdata!:ExamesArray[];
-  call: any;
+  
+  private call: any
   constructor(
     private _allserviceService: AllserviceService,
     @Inject(PLATFORM_ID) private platform: object
@@ -26,8 +29,8 @@ export class AllCategoryComponent implements OnInit {
     if (isPlatformBrowser(this.platform)) {
      this.call = this._allserviceService.getTestData().subscribe({
         next: (data) => {
+          console.log(data)
           this.examesdata = data.subjects;
-
         },
         error: (error) => {
           console.log(error);
@@ -35,7 +38,7 @@ export class AllCategoryComponent implements OnInit {
       });
     }
   }
-  // ngOnDestroy(): void {
-  //   this.call.unsubscribe();
-  // }
+//   ngOnDestroy(): void {
+//     this.call.unsubscribe();
+//  }
 }
